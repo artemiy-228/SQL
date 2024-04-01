@@ -8,6 +8,8 @@ JOIN City AS CityTo
 	ON Flight.CityTo_ID = CityTo.City_ID
 
 
-WHERE CAST(Dat as DATE) = '20130427'
+WHERE CAST(Dat as DATE) = '20130427' AND
+	CityFrom.CityName = 'Санкт-Петербург' AND
+	CityTo.CityName = 'Магадан'
 
 ORDER BY FIO
