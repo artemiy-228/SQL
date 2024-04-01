@@ -30,3 +30,19 @@ WHERE CAST(Dat AS DATE) = '20130427' AND
 	CityTo = 'Магадан'
 
 ORDER BY FIO
+
+/*
+Other solution
+*/
+SELECT FIO
+FROM Passgr,
+	Flight,
+	City AS CityFrom,
+	City AS CityTo
+
+WHERE CAST(Dat AS DATE) = '20130427' AND
+	Passgr.Flight_ID = Flight.Flight_ID AND
+	CityFrom.CityName = 'Санкт-Петербург' AND
+	CityTo.CityName = 'Магадан'
+
+ORDER BY FIO
