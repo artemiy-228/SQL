@@ -11,3 +11,18 @@ WHERE CityFrom.CityName = 'Санкт-Петербург' AND
 	CityTo.CityName = 'Магадан'
 
 ORDER BY Company
+
+/*
+The other way
+*/
+
+SELECT DISTINCT CompanyName AS Company
+FROM Company, Flight, City AS CityFrom, City AS CityTo
+
+WHERE Company.Company_ID = Flight.Company_ID AND
+	Flight.CityFrom_ID = CityFrom.City_ID AND
+	Flight.CityTo_ID = CityTo.City_ID AND
+	CityFrom.CityName = 'Санкт-Петербург' AND
+	CityTo.CityName = 'Магадан'
+
+ORDER BY Company
